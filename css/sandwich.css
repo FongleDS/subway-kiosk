@@ -1,0 +1,111 @@
+body {
+    width: 960px;
+    font-family: Arial, sans-serif; 
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #009223; /* Dark green background */
+    padding: 20px 0;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.sb-logo {
+    width: 170px; /* Adjust based on actual logo size */
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 4%;
+}
+
+aside button {
+    display: flex;
+    align-items: center;
+    width: 104px;
+    height: 104px;
+    background-color: white; 
+    border: 0px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 0%;
+    margin-top: 30%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+aside img {
+    display: flex;
+    align-items: center;
+    width: 104px;
+    height: auto;
+}
+
+aside p {
+    color: black;
+    font-size: 17px;
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 4px;
+}
+
+section {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px; 
+    padding: 20px;
+    max-width: 960px; 
+    margin: 0 auto;
+}
+
+.container {
+    margin: 15px;
+}
+
+.item {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background-color: #fff;
+    width: 300px;
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.item img {
+    width: 100%;
+    display: block;
+}
+
+.container p {
+    font-size: 23px;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0;
+}
+
+footer {
+    text-align: right;
+    padding: 20px 0;
+    margin-right: 10%;
+}
+
+footer button {
+    background-color: #009223;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+}
