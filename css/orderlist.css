@@ -91,3 +91,18 @@ header {
     cursor: pointer;
     margin-top:150px;
 }
+
+
+.status-table {
+    width: 80%;
+    margin: 80px auto; /* 상태바 아래 간격 추가 */
+    border-collapse: collapse; /* 테두리 겹치기 */
+}
+
+.status-table td {
+    width: 100%;
+    border: 1px solid #009223; /* 녹색 테두리 */
+    padding: 50px; /* 셀 내부 패딩 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    clear: both;
+}
