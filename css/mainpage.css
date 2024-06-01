@@ -1,0 +1,53 @@
+* {
+    background-color: rgb(255, 255, 255);
+}
+
+body {
+    width: 960px;
+    font-family: Arial, sans-serif; 
+    background-color: #62CE08;
+}
+
+header {
+    background-color: #62CE08;
+}
+
+.sb-logo {
+    float: left;
+    background-color: #62CE08;
+    margin: 30px;
+}
+
+.banner {
+    height: 1200px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner img {
+    height: 1200px;
+    width: 100%;
+}
+
+#btn {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    background-color: #009223;
+    margin-top: 50px;
+    overflow: hidden;
+    text-align: center;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.eat > a {
+    font-size: 70px;
+    text-decoration: none;
+    font-weight: bolder;
+    background-color: #009223;
+    color: white;
+    display: block; 
+    width: 100%; 
+}
+

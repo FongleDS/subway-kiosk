@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/mainpage.css">
+    <title>mainpage</title>
+</head>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous">
+</script>
+<script>
+    $(document).ready(function() {
+        setInterval(function() {
+            $('.banner img').first().appendTo('.banner')
+        }, 5000);
+
+    });
+</script>
+<body>
+    <header>
+        <div class = "logo">
+            <img class="sb-logo" src="../img/big_logo.png" alt="서브웨이 로고" >
+        </div>
+    </header>
+        <div class="banner">
+            <img src="../img/banner1.jpg">
+            <img src="../img/banner2.png">
+            <img src="../img/banner3.png">
+        </div>
+        <div id="btn">
+            <div class="eat"><a href="sandwich.html">주문하기</a></div>
+        </div>
+</body>
+</html>
