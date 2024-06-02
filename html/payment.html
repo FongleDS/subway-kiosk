@@ -4,7 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/payment.css">
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            var IMP = window.IMP;
+            IMP.init("imp37301508");
+
+            var today = new Date();
+            var hours = today.getHours();
+            var minutes = today.getMinutes();
+            var seconds = today.getSeconds();
+            var milliseconds = today.getMilliseconds();
+            var makeMerchantUid = hours + minutes + seconds + milliseconds;
+
+            function requestPay(itemName){
+                console.log(itemName);
+                IMP.request_pay({
+                    pg : 'kakaopay',
+                    merchant_uid: "IMP"+makeMerchantUid,
+                    name : itemName,
+                    amount: 1
+                }, function (rsp) {
+                    if (rsp.success){
+                        console.log(rsp);
+                        var msg = "결제가 완료되었습니다.\n";
+                        msg += '이탈리안 비엠티'
+                        msg += '빵 : 15cm, 토스팅, 플랫브래드' + "\n";
+                        msg += '치즈 : 모차렐라 치즈' + "\n";
+                        msg += '야채 : 양상추, 토마토, 오이, 피망, 양파' + '원\n';
+                        msg += '소스 : 랜치, 스위트 어니언' + '\n';
+                        msg += '결제 금액 : 6,800원'
+                    } else{
+                        console.log(rsp);
+                        var msg = "결제에 실패하였습니다.\n";
+                        msg += '에러내용 : ' + rsp.error_msg;
+                    }
+                    alert(msg);    
+                });
+            }
+
+            $('#apibtn').click(function() {
+                requestPay('카카오 페이 결제');
+            });
+        });
+    </script>
+
+
     <title>payment page</title>
+
 </head>
 <body>
     <header>
@@ -29,18 +78,20 @@
         </section>
         <div class="amount-display">
             <div class="choice">
+                <a href="./credit.html">
                 <button class="key1" type="button">
                     <img src="../img/card.png" alt="카드결제">
                 </button>
                 <p>카드결제</p>
+                </a>
             </div>
             <div class="choice">
-                <button class="key2" type="button">
+                <button class="key1" id = "apibtn" type="button">
                     <img src="../img/kakao.png" alt="카카오 페이">
                 </button>
                 <p>카카오 페이</p>
             </div>
         </div>
-    </div>
+    </div>    
 </body>
 </html>
