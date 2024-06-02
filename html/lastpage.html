@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>last page</title>
+    <link rel="stylesheet" href="../css/lastpage.css">
+</head>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
+<script type="text/javascript">
+    var count = 5;
+    var countdown = setInterval(function(){
+    $("p.countdown").html(count + "초 후 시작화면으로 이동합니다").css({"font-size": "23pt",
+            "color": "#686868", "margin-top":"10px"});
+        if (count == 0) {
+            clearInterval(countdown);
+            window.open('./mainpage.html', "_self");
+        }
+        count--;//카운트 감소
+    }, 1000);
+</script>
+<body>
+    <div class="popup">
+        <div class="popup-head">
+            <img class="sb-logo" src="../img/mini_logo.png" alt="작은 로고">
+            <p>결제 완료</p>
+        </div>
+        <section>
+            <p>결제가 완료 되었습니다.<br>감사합니다.</p>
+        </section>
+        <div class="amount-display1">
+            <p>저희 키오스크를 이용해 주셔서 감사합니다</p>
+        </div>
+        <div class="amount-display2">
+            <p class="countdown"></p>
+        </div>
+    </div>
+</body>
+</html>
