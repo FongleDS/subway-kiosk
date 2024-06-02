@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
     width: 960px;
@@ -6,7 +12,7 @@ body {
     display: flex;
     justify-content: center;
     background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
+    font-family: 'GmarketSansMedium';
 }
 
 header {
@@ -67,7 +73,7 @@ section {
     width: 100%;
     justify-content: space-around;
     margin-bottom: 50px;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
 }
 
