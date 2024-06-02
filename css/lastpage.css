@@ -1,0 +1,79 @@
+body {
+    width: 960px;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #C5C5C5;
+    font-family: Arial, sans-serif;
+}
+
+.popup {
+    background-color: #ffffff;
+    width: 90%;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(63, 63, 63, 0.3);
+    margin-top: 40%;
+}
+
+.popup-head {
+    display: flex;
+    flex-direction: row;
+    background-color: #009223;
+    margin-bottom: 60px;
+    padding: 10px;
+    align-items: center;
+    border-radius: 15px 15px 0 0;
+}
+
+.popup-head > img {
+    width: 35px;
+    height: 45px;
+    margin-left: 10px;
+}
+
+.popup-head > p {
+    font-size: 27px;
+    color: white;
+    margin: 0 0 0 5px;
+    font-weight: bolder;
+}
+
+section {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+    color: #434343;
+}
+
+.amount-display1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #686868;
+    font-size: 22px;
+}
+
+.amount-display2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    color: #686868;
+    font-size: 22px;
+}
+
+.amount-display1 > p, .amount-display2 > p {
+    margin: 0;
+}
+
+.countdown {
+    color: #686868;
+    font-size: 30px;
+}
+
