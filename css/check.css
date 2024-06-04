@@ -36,8 +36,8 @@ header {
 }
 
 .order-title {
-    align-self: flex-start;
-    width: 100%;
+    align-items: center;
+    width: 90%;
     text-align: left;
 }
 
@@ -76,7 +76,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 90%;
     padding: 20px 10%;
 }
 
@@ -122,21 +122,26 @@ header {
 }
 
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 .order-section {
     flex: 1;
-    background-color: #FBC313; /* Bright yellow */
+    background-color: #FBC313;
     color: black;
     font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 28px;
     cursor: pointer;
 }
 
 
 .cart-icon {
-    width: 24px; /* 아이콘 크기 조정 */
+    width: 30px; /* 아이콘 크기 조정 */
     height: auto;
     margin-right: 10px; /* 아이콘과 텍스트 사이 간격 */
 }
