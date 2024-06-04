@@ -6,6 +6,17 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/credit.css">
 </head>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
+<script type="text/javascript">
+    var count = 5;
+    var countdown = setInterval(function(){
+        if (count == 0) {
+            clearInterval(countdown);
+            window.open('./lastpage.html', "_self");
+        }
+        count--;//카운트 감소
+    }, 1000);
+</script>
 <body>
     <header>
         <div id="logo">
@@ -34,7 +45,7 @@
             </div>
         </div>
         <div class="under">
-        <button type="button" class="delete-button"><a href="orderlist.html">결제 취소</a></button>
+        <button type="button" class="delete-button"><a href="check.html">결제 취소</a></button>
         </div>
     </div>
 </body>
