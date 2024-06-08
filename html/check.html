@@ -14,8 +14,8 @@
     </header>
     <main>
         <section class="status-bar-section">
-            <img src="../img/status1.png" alt="상태바 1" class="status-bar">
             <div class="order-details">아래의 주문 내역을 확인해 주세요.</div>
+            <img src="../img/status1.png" alt="상태바 1" class="status-bar">
             <div class="order-title">
                 <div class="menu-line"></div>
                 <div class="sandwich-details">
@@ -72,9 +72,10 @@
             const orderKeys = ['sandwiches', 'breads', 'veges', 'sides', 'sauces','adds'];
             orderKeys.forEach((item, index) => {
                 const storedItems = sessionStorage.getItem(item) ? JSON.parse(sessionStorage.getItem(item)) : [];
-                document.getElementById('w_order_' + (index + 1)).textContent = storedItems.join(", ");
+                const displayText = storedItems.length > 0 ? storedItems.join(", ") : "선택 안함";
+                document.getElementById('w_order_' + (index + 1)).textContent = displayText;
             });
         });
-    </script>
+    </script>        
 </body>
 </html>
