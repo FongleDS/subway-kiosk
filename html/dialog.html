@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Dialogflow Chat</title>
+</head>
+<body>
+    <h1>Dialogflow 챗봇</h1>
+    <input type="text" id="messageInput" placeholder="메시지를 입력하세요">
+    <button onclick="sendMessage()">보내기</button>
+    <p id="response"></p>
+
+    <script>
+        async function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const responseField = document.getElementById('response');
+
+            const response = await fetch('/send-message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: input.value })
+            });
+
+            const data = await response.json();
+            responseField.textContent = '응답: ' + data.reply;
+            input.value = '';  // 입력 필드 초기화
+        }
+    </script>
+</body>
+</html>
