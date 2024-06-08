@@ -26,14 +26,15 @@ header {
 .status-bar {
     width: 80%;
     height: auto;
+    padding: 20px 0;
 }
 
 .order-details {
-    font-size: 24px;
+    font-size: 40px;
     color: #3d3d3d;
-    margin-top: 80px;
+    margin-top: 30px;
+    margin-bottom: 50px;
     text-align: center;
-    font-size: 35px;
     font-weight: bold;
 }
 
