@@ -30,9 +30,11 @@ header {
 
 .order-details {
     font-size: 24px;
-    color: #333;
+    color: #3d3d3d;
     margin-top: 80px;
     text-align: center;
+    font-size: 35px;
+    font-weight: bold;
 }
 
 .order-title {
@@ -41,35 +43,59 @@ header {
     text-align: left;
 }
 
-.menu-name {
-    font-size: 26px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-    margin-top: 100px;
-}
-
 .menu-line {
     height: 4px;
     width: 100%;
     background-color: #009223;
     margin-bottom: 20px;
+    margin-top: 80px;
+}
+
+.window {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .sandwich-details {
-    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.menu-name {
+    font-weight: bold;
+    color: #333;
+    line-height: 2;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.window_order_list {
     color: #666;
-    margin-top: 20px;
-    margin-bottom: 20px;
     text-align: left;
-    line-height: 1.6;
+    line-height: 2.1;
+    margin-left: 50px;
+}
+
+
+.w_name {
+    font-size: 26px;
+    font-weight: bolder;
+    color: #00771c;
+}
+
+.w_order {
+    font-size: 25px;
+    font-weight: bolder;
+    margin-left: 15px;
 }
 
 .menu-line-bottom {
-    height: 2px;
+    height: 5px;
     width: 100%;
     background-color: #009223;
-    margin-bottom: 50px; /* 줄어든 간격으로 인해 간격 조정 */
+    margin-bottom: 20px;
 }
 
 .navigation-buttons {
