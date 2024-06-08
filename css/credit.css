@@ -1,121 +1,132 @@
 body {
-    width: 960px;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
+  width: 960px;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
 }
 
 a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
-
 header {
-    width: 100%;
-    background-color: #009223; /* Dark green background */
-    padding: 20px 0;
-    margin-bottom: 30px;
-    text-align: center;
+  width: 100%;
+  background-color: #009223; /* Dark green background */
+  padding: 20px 0;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .sb-logo {
-    width: 170px; /* Adjust based on actual logo size */
+  width: 170px; /* Adjust based on actual logo size */
 }
 
+.status-bar-section {
+  text-align: center;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.status-bar {
+  width: 80%;
+  height: auto;
+}
 
 .progress {
-    width: 100%;
-    align-items: center;
-    text-align: center;
-    color: #434343;
-    font-size: 40px;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  color: #434343;
+  font-size: 40px;
 }
 
-
 .popup {
-    background-color: #ffffff;
-    width: 90%;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(63, 63, 63, 0.3);
-    margin-top: 40px;
+  background-color: #ffffff;
+  width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(63, 63, 63, 0.3);
+  margin-top: 40px;
 }
 
 .popup-head {
-    display: flex;
-    flex-direction: row;
-    background-color: #009223;
-    margin-bottom: 80px;
-    padding: 10px;
-    align-items: center;
-    border-radius: 8px 8px 0 0;
+  display: flex;
+  flex-direction: row;
+  background-color: #009223;
+  margin-bottom: 80px;
+  padding: 10px;
+  align-items: center;
+  border-radius: 8px 8px 0 0;
 }
 
 .popup-head > img {
-    width: 35px;
-    height: 45px;
-    margin-left: 10px;
+  width: 35px;
+  height: 45px;
+  margin-left: 10px;
 }
 
 .popup-head > p {
-    font-size: 27px;
-    color: white;
-    margin: 0 0 0 5px;
-    font-weight: bolder;
+  font-size: 27px;
+  color: white;
+  margin: 0 0 0 5px;
+  font-weight: bolder;
 }
 
 section {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: space-around;
-    font-size: 45px;
-    font-weight: bold;
-    text-align: center;
-    color: #434343;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-around;
+  margin-bottom: 50px;
+  font-size: 45px;
+  font-weight: bold;
+  text-align: center;
+  color: #434343;
 }
 
 .small-sec {
-    font-size: 25px;
-    color: #878787;
-    font-weight: lighter;
-    margin: 0;
+  font-size: 25px;
+  color: #878787;
+  font-weight: lighter;
+  margin: 0;
 }
 
 .amount-display {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
 .choice {
-    margin: 50px;
-    text-align: center;
-    font-size: 30px;
+  margin: 50px;
+  text-align: center;
+  font-size: 30px;
 }
 
-.choice > img{
-    width: 500px;
+.choice > img {
+  width: 500px;
 }
 
 .delete-button {
-    background-color: #009223;
-    border: none;
-    padding: 10px 20px;
-    color: white;
-    font-size: 40px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-bottom: 50px;
+  background-color: #009223;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-size: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 50px;
 }
 
 .under {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
