@@ -9,21 +9,23 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const sandwichContainers = document.querySelectorAll('.container'); // 모든 샌드위치 컨테이너 선택
-        let selectedSandwiches = []; // 선택된 샌드위치 이름을 저장할 배열
+        const breadContainers = document.querySelectorAll('.container');
+        let selectedBreads = sessionStorage.getItem('breads') ? JSON.parse(sessionStorage.getItem('breads')) : [];
     
-        sandwichContainers.forEach(container => {
+        breadContainers.forEach(container => {
             container.addEventListener('click', function() {
-                const sandwichName = this.querySelector('p').textContent; // 클릭한 컨테이너의 <p> 태그에서 샌드위치 이름 가져오기
-                const index = selectedSandwiches.indexOf(sandwichName);
+                const breadName = this.querySelector('p').textContent;
+                const index = selectedBreads.indexOf(breadName);
     
                 if (index > -1) {
-                    selectedSandwiches.splice(index, 1); // 배열에서 이름 제거
+                    selectedBreads.splice(index, 1);
                 } else {
-                    selectedSandwiches.push(sandwichName); // 배열에 이름 추가
+                    selectedBreads.push(breadName);
                 }
     
-                document.getElementById('selected-bread').textContent = selectedSandwiches.join(", "); // footer에 샌드위치 이름들을 콤마로 구분하여 업데이트
+                sessionStorage.setItem('breads', JSON.stringify(selectedBreads)); // 저장
+                console.log("Saved breads:", selectedBreads); // 로그 출력
+                document.getElementById('selected-bread').textContent = selectedBreads.join(", ");
             });
         });
     });
