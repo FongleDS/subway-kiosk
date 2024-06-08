@@ -112,34 +112,43 @@ section {
     cursor: pointer;
 }
 
-
-.footer-style {
-    background-color: #e0e0e0; /* 회색 배경 */
-    padding: 180px 0; /* 상하 패딩 */
-    text-align: center; /* 텍스트 중앙 정렬 */
+/*장바구니 구현*/
+#order_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #e0e0e0;
+    text-align: center;
     width: 100%;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    padding-top: 10px; /* Adds padding on top */
-    padding-bottom: 10px; /* Adds padding on the bottom */
+    padding-top: 30px; 
+    padding-bottom: 30px; 
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Creates three columns */
-    gap: 30px; /* Adds space between the squares */
-    padding: 20px; /* Adds padding around the grid */
+.cart {
+    display: flex;
+    flex-direction: row;
+    padding-top: 15px; 
+    padding-bottom: 15px; 
+    margin-left: 10px;
 }
 
 .footer-square {
-    background-color: #009223; /* Green background */
-    color: white; /* White text color */
     display: flex;
-    align-items: center; /* Centers content vertically */
-    justify-content: center; /* Centers content horizontally */
-    height: 40px; /* Set the height of the squares */
-    width: 25%;
-    font-size: 18px; /* Font size for the text */
-    border-radius: 8px; /* Rounded corners for the squares */
-    cursor: pointer; /* Changes the cursor to a pointer on hover */
+    align-items: center; 
+    justify-content: center;
+    background-color: #009223; 
+    color: white;
+    height: 45px; 
+    width: 125px;
+    font-size: 20px;
+    border-radius: 10px; 
 }
+
+.selected-name {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    font-size: 23px;
+    margin-left: 30px;
+}
+
+
