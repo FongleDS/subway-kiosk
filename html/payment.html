@@ -11,15 +11,23 @@
         $(document).ready(function(){
             var IMP = window.IMP;
             IMP.init("imp37301508");
-        
+            
             var today = new Date();
             var hours = today.getHours();
             var minutes = today.getMinutes();
             var seconds = today.getSeconds();
             var milliseconds = today.getMilliseconds();
             var makeMerchantUid = hours + minutes + seconds + milliseconds;
-        
+            
             function requestPay(itemName){
+                // Load user's choices from sessionStorage
+                var selectedSandwich = sessionStorage.getItem('sandwiches') ? JSON.parse(sessionStorage.getItem('sandwiches')).join(", ") : "None";
+                var selectedBread = sessionStorage.getItem('breads') ? JSON.parse(sessionStorage.getItem('breads')).join(", ") : "None";
+                var selectedVege = sessionStorage.getItem('veges') ? JSON.parse(sessionStorage.getItem('veges')).join(", ") : "None";
+                var selectedSide = sessionStorage.getItem('sides') ? JSON.parse(sessionStorage.getItem('sides')).join(", ") : "None";
+                var selectedSauce = sessionStorage.getItem('sauces') ? JSON.parse(sessionStorage.getItem('sauces')).join(", ") : "None";
+                var selectedAdd = sessionStorage.getItem('adds') ? JSON.parse(sessionStorage.getItem('adds')).join(", ") : "None";
+        
                 console.log(itemName);
                 IMP.request_pay({
                     pg : 'kakaopay',
@@ -30,27 +38,29 @@
                     if (rsp.success){
                         console.log(rsp);
                         var msg = "결제가 완료되었습니다.\n";
-                        msg += '이탈리안 비엠티'
-                        msg += '빵 : 15cm, 토스팅, 플랫브래드' + "\n";
-                        msg += '치즈 : 모차렐라 치즈' + "\n";
-                        msg += '야채 : 양상추, 토마토, 오이, 피망, 양파' + '원\n';
-                        msg += '소스 : 랜치, 스위트 어니언' + '\n';
-                        msg += '결제 금액 : 6,800원';
+                        msg += '샌드위치: ' + selectedSandwich + "\n";
+                        msg += '빵: ' + selectedBread + "\n";
+                        msg += '야채: ' + selectedVege + "\n";
+                        msg += '소스: ' + selectedSauce + "\n";
+                        msg += '사이드: ' + selectedSide + "\n";
+                        msg += '추가토핑: ' + selectedAdd + "\n";
+                        msg += '결제 금액: 6,800원';
                         alert(msg);
                         window.location.href = 'lastpage.html'; // 결제 성공 후 페이지 이동
                     } else{
                         console.log(rsp);
                         var msg = "결제에 실패하였습니다.\n";
-                        msg += '에러내용 : ' + rsp.error_msg;
+                        msg += '에러내용: ' + rsp.error_msg;
                         alert(msg);
                     }
                 });
             }
-        
+            
             $('#apibtn').click(function() {
                 requestPay('카카오 페이 결제');
             });
         });
+        
     </script>
     <title>payment page</title>
 
