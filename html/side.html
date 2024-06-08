@@ -6,6 +6,60 @@
     <link rel="stylesheet" href="../css/side.css">
     <title>side page</title>
 </head>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const sideContainers = document.querySelectorAll('.container');
+        let selectedSides = sessionStorage.getItem('sides') ? JSON.parse(sessionStorage.getItem('sides')) : [];
+    
+        sideContainers.forEach(container => {
+            container.addEventListener('click', function() {
+                const sideName = this.querySelector('p').textContent;
+                const index = selectedSides.indexOf(sideName);
+    
+                if (index > -1) {
+                    selectedSides.splice(index, 1);
+                } else {
+                    selectedSides.push(sideName);
+                }
+    
+                sessionStorage.setItem('sides', JSON.stringify(selectedSides)); // 저장
+                console.log("Saved sides:", selectedSides); // 로그 출력
+                document.getElementById('selected-side').textContent = selectedSides.join(", ");
+            });
+        });
+    });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const selectedSandwiches = sessionStorage.getItem('sandwiches') ? JSON.parse(sessionStorage.getItem('sandwiches')) : [];
+            console.log("Loaded sandwiches on side page:", selectedSandwiches); // 로그 출력
+            if (selectedSandwiches.length > 0) {
+                document.getElementById('selected-sandwiches-display').textContent = selectedSandwiches.join(", ");
+            }
+        });
+        </script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const selectedBreads = sessionStorage.getItem('breads') ? JSON.parse(sessionStorage.getItem('breads')) : [];
+            console.log("Loaded breads on side page:", selectedBreads); // 로그 출력
+            if (selectedBreads.length > 0) {
+                document.getElementById('selected-breads-display').textContent = selectedBreads.join(", ");
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const selectedVeges = sessionStorage.getItem('veges') ? JSON.parse(sessionStorage.getItem('veges')) : [];
+            console.log("Loaded veges on side page:", selectedVeges); // 로그 출력
+            if (selectedVeges.length > 0) {
+                document.getElementById('selected-veges-display').textContent = selectedVeges.join(", ");
+            }
+        });
+    </script>
+
 <body>
     <header>
         <div id = "logo">
@@ -119,7 +173,7 @@
             </div>
             <div id="order3" class="cart">
                 <div class="footer-square">빵</div> 
-                <div class="selected-name" id="selected-bread"></div>
+                <div class="selected-name" id="selected-breads-display"></div>
             </div>
             <div id="order4" class="cart">
                 <div class="footer-square">사이드/음료</div>
@@ -127,7 +181,7 @@
             </div>
             <div id="order5" class="cart">
                 <div class="footer-square">야채</div>
-                <div class="selected-name" id="selected-vege"></div>
+                <div class="selected-name" id="selected-veges-display"></div>
             </div>
             <div id="order6" class="cart">
                 <div class="footer-square">추가토핑</div>
