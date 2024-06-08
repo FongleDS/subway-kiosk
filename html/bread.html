@@ -30,16 +30,15 @@
     </script>
     
     
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const selectedSandwiches = sessionStorage.getItem('sandwiches') ? JSON.parse(sessionStorage.getItem('sandwiches')) : [];
-        console.log("Loaded sandwiches on bread page:", selectedSandwiches); // 로그 출력
-        if (selectedSandwiches.length > 0) {
-            document.getElementById('selected-sandwich').textContent = selectedSandwiches.join(", ");
-        }
-    });
-    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const selectedSandwiches = sessionStorage.getItem('sandwiches') ? JSON.parse(sessionStorage.getItem('sandwiches')) : [];
+            console.log("Loaded sandwiches on bread page:", selectedSandwiches); // 로그 출력
+            if (selectedSandwiches.length > 0) {
+                document.getElementById('selected-sandwiches-display').textContent = selectedSandwiches.join(", ");
+            }
+        });
+        </script>
     
 <body>
     <header>
@@ -146,7 +145,7 @@
     <div id="order_list">
         <div id="order1" class="cart">
             <div class="footer-square">샌드위치</div> 
-            <div class="selected-name" id="selected-sandwich"></div>
+            <div class="selected-name" id="selected-sandwiches-display"></div>
         </div>
         <div id="order2" class="cart">
             <div class="footer-square">소스</div> 

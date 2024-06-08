@@ -8,21 +8,23 @@
 </head>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const sandwichContainers = document.querySelectorAll('.container'); // 모든 샌드위치 컨테이너 선택
-        let selectedSandwiches = []; // 선택된 샌드위치 이름을 저장할 배열
+        const sandwichContainers = document.querySelectorAll('.container');
+        let selectedSandwiches = sessionStorage.getItem('sandwiches') ? JSON.parse(sessionStorage.getItem('sandwiches')) : [];
     
         sandwichContainers.forEach(container => {
             container.addEventListener('click', function() {
-                const sandwichName = this.querySelector('p').textContent; // 클릭한 컨테이너의 <p> 태그에서 샌드위치 이름 가져오기
+                const sandwichName = this.querySelector('p').textContent;
                 const index = selectedSandwiches.indexOf(sandwichName);
     
                 if (index > -1) {
-                    selectedSandwiches.splice(index, 1); // 배열에서 이름 제거
+                    selectedSandwiches.splice(index, 1);
                 } else {
-                    selectedSandwiches.push(sandwichName); // 배열에 이름 추가
+                    selectedSandwiches.push(sandwichName);
                 }
     
-                document.getElementById('selected-sandwich').textContent = selectedSandwiches.join(", "); // footer에 샌드위치 이름들을 콤마로 구분하여 업데이트
+                sessionStorage.setItem('sandwiches', JSON.stringify(selectedSandwiches)); // 저장
+                console.log("Saved sandwiches:", selectedSandwiches); // 로그 출력
+                document.getElementById('selected-sandwich').textContent = selectedSandwiches.join(", ");
             });
         });
     });
