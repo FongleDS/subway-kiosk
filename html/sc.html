@@ -6,6 +6,66 @@
     <link rel="stylesheet" href="../css/sc.css">
     <title>sauce page</title>
 </head>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const sauceContainers = document.querySelectorAll('.container');
+        let selectedSauces = sessionStorage.getItem('sauces') ? JSON.parse(sessionStorage.getItem('sauces')) : [];
+    
+        sauceContainers.forEach(container => {
+            container.addEventListener('click', function() {
+                const sauceName = this.querySelector('p').textContent;
+                const index = selectedSauces.indexOf(sauceName);
+    
+                if (index > -1) {
+                    selectedSauces.splice(index, 1);
+                } else {
+                    selectedSauces.push(sauceName);
+                }
+    
+                sessionStorage.setItem('sauces', JSON.stringify(selectedSauces)); // 저장
+                console.log("Saved sauces:", selectedSauces); // 로그 출력
+                document.getElementById('selected-sauce').textContent = selectedSauces.join(", ");
+            });
+        });
+    });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const selectedSandwiches = sessionStorage.getItem('sandwiches') ? JSON.parse(sessionStorage.getItem('sandwiches')) : [];
+            console.log("Loaded sandwiches on sauce page:", selectedSandwiches); // 로그 출력
+            if (selectedSandwiches.length > 0) {
+                document.getElementById('selected-sandwiches-display').textContent = selectedSandwiches.join(", ");
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const selectedBreads = sessionStorage.getItem('breads') ? JSON.parse(sessionStorage.getItem('breads')) : [];
+            console.log("Loaded breads on sauce page:", selectedBreads); // 로그 출력
+            if (selectedBreads.length > 0) {
+                document.getElementById('selected-breads-display').textContent = selectedBreads.join(", ");
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const selectedVeges = sessionStorage.getItem('veges') ? JSON.parse(sessionStorage.getItem('veges')) : [];
+            console.log("Loaded veges on sauce page:", selectedVeges); // 로그 출력
+            if (selectedVeges.length > 0) {
+                document.getElementById('selected-veges-display').textContent = selectedVeges.join(", ");
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const selectedSides = sessionStorage.getItem('sides') ? JSON.parse(sessionStorage.getItem('sides')) : [];
+            console.log("Loaded sides on sauce page:", selectedSides); // 로그 출력
+            if (selectedSides.length > 0) {
+                document.getElementById('selected-sides-display').textContent = selectedSides.join(", ");
+            }
+        });
+    </script>
+
 <body>
     <header>
         <div id = "logo">
@@ -119,15 +179,15 @@
             </div>
             <div id="order3" class="cart">
                 <div class="footer-square">빵</div> 
-                <div class="selected-name" id="selected-bread"></div>
+                <div class="selected-name" id="selected-breads-display"></div>
             </div>
             <div id="order4" class="cart">
                 <div class="footer-square">사이드/음료</div>
-                <div class="selected-name" id="selected-side"></div>
+                <div class="selected-name" id="selected-sides-display"></div>
             </div>
             <div id="order5" class="cart">
                 <div class="footer-square">야채</div>
-                <div class="selected-name" id="selected-vege"></div>
+                <div class="selected-name" id="selected-veges-display"></div>
             </div>
             <div id="order6" class="cart">
                 <div class="footer-square">추가토핑</div>
