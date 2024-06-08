@@ -28,7 +28,7 @@
             });
         });
     });
-    </script>
+</script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -38,9 +38,9 @@
                 document.getElementById('selected-sandwiches-display').textContent = selectedSandwiches.join(", ");
             }
         });
-        </script>
+    </script>
     
-        <script>
+    <script>
             document.addEventListener("DOMContentLoaded", function() {
                 const selectedBreads = sessionStorage.getItem('breads') ? JSON.parse(sessionStorage.getItem('breads')) : [];
                 console.log("Loaded breads on vege page:", selectedBreads); // 로그 출력
@@ -48,12 +48,7 @@
                     document.getElementById('selected-breads-display').textContent = selectedBreads.join(", ");
                 }
             });
-            </script>
-
-
-
-
-
+    </script>
 <body>
     <header>
         <div id = "logo">
