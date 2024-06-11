@@ -64,6 +64,7 @@ header {
     width: 100%; 
 }
 
+/*kiosk*/
 #screen_bottom {
     display: flex;
     flex-direction: row;
