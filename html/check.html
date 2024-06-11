@@ -25,7 +25,7 @@
                     <!-- 주문 정보가 표시될 창 -->
                     <div class="menu-name">
                         <div class="w_name">샌드위치 </div>
-                        <div class="w_name">빵 </div>
+                        <div class="w_name">빵/치즈 </div>
                         <div class="w_name">야채 </div>
                         <div class="w_name">추가토핑 </div>
                         <div class="w_name">소스 </div>
@@ -70,34 +70,38 @@
             </div>
         </section>
     </main>
- 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const orderKeys = ['sandwiches', 'breads', 'veges', 'sides', 'sauces', 'adds'];
-            const orderdatas = {
-                '베지 샌드위치': "4,900",
-                '에그마요 샌드위치': "5,500",
-                '햄 샌드위치': "5,800",
-                '참치 샌드위치': "5,800",
-                '쉬림프 샌드위치': "7,600",
-                '이탈리안 비엠티': "6,700"
-            };
-        
-            orderKeys.forEach((item, index) => {
-                const storedItems = sessionStorage.getItem(item) ? JSON.parse(sessionStorage.getItem(item)) : [];
-                const displayText = storedItems.length > 0 ? storedItems.join(", ") : "선택 안함";
-                document.getElementById('w_order_' + (index + 1)).textContent = displayText;
-        
-                if (item === 'sandwiches' && storedItems.length > 0) {
-                    const sandwichName = storedItems[0]; // 첫 번째 샌드위치 선택을 가정
-                    const price = orderdatas[sandwichName];
-                    if (price) {
-                        document.querySelector('.price-amount').textContent = price;
-                        sessionStorage.setItem('totalPrice', price); // 저장
-                    }
-                }
-            });
-        });
+    const orderKeys = ['sandwiches', 'breads', 'veges', 'sides', 'sauces', 'adds'];
+    const orderdatas = {
+        '베지 샌드위치': "4,900",
+        '에그마요 샌드위치': "5,500",
+        '햄 샌드위치': "5,800",
+        '참치 샌드위치': "5,800",
+        '쉬림프 샌드위치': "7,600",
+        '이탈리안 비엠티': "6,700"
+    };
+
+    orderKeys.forEach((item, index) => {
+        const storedItems = sessionStorage.getItem(item) ? JSON.parse(sessionStorage.getItem(item)) : [];
+        let displayText = storedItems.length > 0 ? storedItems.join(", ") : "선택 안함";
+        if (item === 'breads' && storedItems.length > 0) {
+            const selectedCheese = sessionStorage.getItem('cheese') ? sessionStorage.getItem('cheese') : '치즈 선택 안함';
+            displayText += ", " + selectedCheese; // 빵 정보 뒤에 치즈 정보 추가
+        }
+        document.getElementById('w_order_' + (index + 1)).textContent = displayText;
+
+        if (item === 'sandwiches' && storedItems.length > 0) {
+            const sandwichName = storedItems[0]; // 첫 번째 샌드위치 선택을 가정
+            const price = orderdatas[sandwichName];
+            if (price) {
+                document.querySelector('.price-amount').textContent = price;
+                sessionStorage.setItem('totalPrice', price); // 저장
+            }
+        }
+    });
+});
+
     </script>
 </body>
 </html>
