@@ -28,6 +28,21 @@
                 document.getElementById('selected-bread').textContent = selectedBreads.join(", ");
             });
         });
+
+        const modal = document.querySelector('.modal');
+        const modalOpen = document.querySelector('.modal_btn');
+        const modalClose = document.querySelector('.close_btn');
+
+        //열기 버튼을 눌렀을 때 모달팝업이 열림
+        modalOpen.addEventListener('click',function(){
+            //display 속성을 block로 변경
+            modal.style.display = 'block';
+        });
+        //닫기 버튼을 눌렀을 때 모달팝업이 닫힘
+        modalClose.addEventListener('click',function(){
+        //display 속성을 none으로 변경
+            modal.style.display = 'none';
+        });
     });
     </script>
     
@@ -96,7 +111,7 @@
             <button type="button">
                 <img src="../img/aside_drink.png" alt="클릭 버튼">
             </button>
-            <p><span class="subtitle">사이드|음료</span></p>
+            <p><span class="subtitle">사이드/음료</span></p>
             </a>
         </div>
     </aside>
@@ -141,6 +156,7 @@
     </main>
     <div class="navigation-buttons">
         <button type="button" class="prev-button" onclick="location.href='sandwich.html' ">이전 단계</button>
+        <button type="button" class="modal_btn">치즈 선택</button>
         <button type="button" class="next-button" onclick="location.href='vege.html' ">다음 단계</button>
     </div>
     <footer>
@@ -171,5 +187,32 @@
         </div>
     </div>
     </footer>
+    <!--모달 팝업-->
+    <div class="modal">
+        <div class="modal_popup">
+            <h3>치즈를 골라주세요</h3>
+            <div class="cheese-select">
+                <div class="contain">
+                    <div class="chitem">
+                        <img src="../img/ch_american.png" alt="치즈 1">
+                    </div>
+                    <p>아메리칸 치즈</p>
+                </div>
+                <div class="contain">
+                    <div class="chitem">
+                        <img src="../img/ch_shured.png" alt="치즈 2">
+                    </div>
+                    <p>슈레드 치즈</p>
+                </div>
+                <div class="contain">
+                    <div class="chitem">
+                        <img src="../img/ch_mozza.png" alt="치즈 3">
+                    </div>
+                    <p>모차렐라 치즈</p>
+                </div>
+            </div>
+            <button type="button" class="close_btn">닫기</button>
+        </div>
+    </div>
 </body>
 </html>
