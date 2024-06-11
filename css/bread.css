@@ -197,17 +197,26 @@ section {
     padding: 20px;
     background: #ffffff;
     border-radius: 20px;
+    text-align: center;
 }
 
 .modal .modal_popup .close_btn {
     display: block;
-    padding: 10px 20px;
+    padding: 8px 20px;
     background-color: #FBC313;
     border: none;
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
     transition: box-shadow 0.2s;
+    margin-top: 10px;
+}
+
+.modal_popup > h3 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 25px;
+    color: #3f3f3f;
 }
 
 .cheese-select {
@@ -220,6 +229,10 @@ section {
 .contain:hover {
     box-shadow: 3px 4px 11px 0px #00000040;
     border-radius: 20px;
+}
+
+.contain > p {
+    margin: 0;
 }
 
 .chitem {
