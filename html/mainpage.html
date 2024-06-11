@@ -17,6 +17,16 @@
     });
 </script>
 <body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 세션 스토리지 클리어
+            sessionStorage.clear();
+        
+            // 선택한 메뉴 항목이 있다면 이곳에 초기화 코드 추가
+            // 예: document.getElementById('selected-items').textContent = '';
+        });
+        </script>
+        
     <div class="kiosk-simulation">
         <div class="kiosk-background">
             <div class="mainpage">
