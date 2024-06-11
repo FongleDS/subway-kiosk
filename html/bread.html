@@ -28,6 +28,18 @@
                 document.getElementById('selected-bread').textContent = selectedBreads.join(", ");
             });
         });
+      
+
+        // 치즈 선택 로직 추가
+        const cheeseContainers = document.querySelectorAll('.contain');
+        cheeseContainers.forEach(container => {
+            container.addEventListener('click', function() {
+                selectedCheese = this.querySelector('p').textContent;  // 치즈 선택
+                sessionStorage.setItem('cheese', selectedCheese);
+                updateDisplay();
+                modal.style.display = 'none';  // 모달 닫기
+            });
+        });
 
         const modal = document.querySelector('.modal');
         const modalOpen = document.querySelector('.modal_btn');
@@ -43,6 +55,13 @@
         //display 속성을 none으로 변경
             modal.style.display = 'none';
         });
+
+        function updateDisplay() {
+            document.getElementById('selected-bread').textContent = selectedBreads.join(", ") + (selectedCheese ? ", " + selectedCheese : "");
+        }
+    
+        // 페이지 로드 시 현재 선택을 표시
+        updateDisplay();
     });
     </script>
     
