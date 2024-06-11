@@ -70,24 +70,33 @@
  
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const orderKeys = ['sandwiches', 'breads', 'veges', 'sides', 'sauces','adds'];
-            const orderdatas = {'베지 샌드위치':"4,900", '에그마요 샌드위치':"5,500", '햄 샌드위치':"5,800", '참치 샌드위치':"5,800", '쉬림프 샌드위치':"7,600", '이탈리안 비엠티':"6,700"};
+            const orderKeys = ['sandwiches', 'breads', 'veges', 'sides', 'sauces', 'adds'];
+            const orderdatas = {
+                '베지 샌드위치': "4,900",
+                '에그마요 샌드위치': "5,500",
+                '햄 샌드위치': "5,800",
+                '참치 샌드위치': "5,800",
+                '쉬림프 샌드위치': "7,600",
+                '이탈리안 비엠티': "6,700"
+            };
+        
             orderKeys.forEach((item, index) => {
                 const storedItems = sessionStorage.getItem(item) ? JSON.parse(sessionStorage.getItem(item)) : [];
                 const displayText = storedItems.length > 0 ? storedItems.join(", ") : "선택 안함";
                 document.getElementById('w_order_' + (index + 1)).textContent = displayText;
-    
-                // 샌드위치 이름과 일치하는 가격 업데이트
+        
                 if (item === 'sandwiches' && storedItems.length > 0) {
                     const sandwichName = storedItems[0]; // 첫 번째 샌드위치 선택을 가정
                     const price = orderdatas[sandwichName];
                     if (price) {
                         document.querySelector('.price-amount').textContent = price;
+                        sessionStorage.setItem('totalPrice', price); // 저장
                     }
                 }
             });
         });
-    </script>
+        </script>
+        
   
    
 </body>
