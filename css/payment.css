@@ -1,25 +1,18 @@
-@font-face {
-    font-family: 'GmarketSansMedium';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 body {
     width: 960px;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    background-color: #f4f4f4;
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 header {
-    width: 100%;
     background-color: #009223; /* Dark green background */
     padding: 20px 0;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     text-align: center;
 }
 
@@ -38,24 +31,25 @@ header {
 .status-bar {
     width: 80%;
     height: auto;
+    padding: 20px 0;
 }
 
 
 .progress {
     width: 100%;
-    align-items: center;
     text-align: center;
     color: #434343;
     font-size: 40px;
+    margin-top: 100px;
 }
 
 
 .popup {
     background-color: #ffffff;
-    width: 90%;
-    border-radius: 10px;
+    width: 88%;
+    border-radius: 20px;
     box-shadow: 0 2px 5px rgba(63, 63, 63, 0.3);
-    margin-top: 40px;
+    margin: 40px auto;
 }
 
 .popup-head {
@@ -65,19 +59,20 @@ header {
     margin-bottom: 80px;
     padding: 10px;
     align-items: center;
-    border-radius: 8px 8px 0 0;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 5px 0 5px -5px rgba(63, 63, 63, 0.3), -5px 0 5px -5px rgba(63, 63, 63, 0.3);
 }
 
 .popup-head > img {
-    width: 35px;
-    height: 45px;
+    width: 45px;
+    height: 55px;
     margin-left: 10px;
 }
 
 .popup-head > p {
-    font-size: 27px;
+    font-size: 35px;
     color: white;
-    margin: 0 0 0 5px;
+    margin: 8px 0 5px 8px;
     font-weight: bolder;
 }
 
@@ -135,6 +130,7 @@ section {
   .mainpage {
     background-color: #ffffff;
     margin: 40px;
+    height: 1716px;
   }
   
   #screen_bottom {
