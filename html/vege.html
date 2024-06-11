@@ -38,28 +38,17 @@
                 document.getElementById('selected-sandwiches-display').textContent = selectedSandwiches.join(", ");
             }
         });
-    </script>
-    
+    </script> 
     <script>
             document.addEventListener("DOMContentLoaded", function() {
                 const selectedBreads = sessionStorage.getItem('breads') ? JSON.parse(sessionStorage.getItem('breads')) : [];
-
+                const selectedCheese = sessionStorage.getItem('cheese');
                 console.log("Loaded breads on vege page:", selectedBreads); // 로그 출력
                 if (selectedBreads.length > 0) {
-                    document.getElementById('selected-breads-display').textContent = selectedBreads.join(", ");
+                    document.getElementById('selected-breads-display').textContent = selectedBreads.join(", ")+ (selectedCheese ? ", " + selectedCheese : "");
                 }
             });
     </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const selectedCheese = sessionStorage.getItem('cheese') ? JSON.parse(sessionStorage.getItem('cheese')) : [];
-
-            console.log("Loaded breads on vege page:", selectedCheese); // 로그 출력
-            if (selectedCheese.length > 0) {
-                document.getElementById('selected-breads-display').textContent = selectedBreads.join(", ");
-            }
-        });
-</script>
 <body>
     <header>
         <div id = "logo">
