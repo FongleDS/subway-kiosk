@@ -33,7 +33,7 @@
                     pg : 'kakaopay',
                     merchant_uid: "IMP"+makeMerchantUid,
                     name : itemName,
-                    amount: 1
+                    amount: 6700
                 }, function (rsp) {
                     if (rsp.success){
                         console.log(rsp);
@@ -44,7 +44,7 @@
                         msg += '추가토핑: ' + selectedSide + "\n";
                         msg += '소스: ' + selectedSauce + "\n";
                         msg += '사이드/음료: ' + selectedAdd + "\n";
-                        msg += '결제 금액: 6,800원';
+                        msg += '결제 금액: 6,700원';
                         alert(msg);
                         window.location.href = 'lastpage.html'; // 결제 성공 후 페이지 이동
                     } else{
