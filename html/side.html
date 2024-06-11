@@ -40,14 +40,15 @@
         });
         </script>
     
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const selectedBreads = sessionStorage.getItem('breads') ? JSON.parse(sessionStorage.getItem('breads')) : [];
-            console.log("Loaded breads on side page:", selectedBreads); // 로그 출력
-            if (selectedBreads.length > 0) {
-                document.getElementById('selected-breads-display').textContent = selectedBreads.join(", ");
-            }
-        });
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const selectedBreads = sessionStorage.getItem('breads') ? JSON.parse(sessionStorage.getItem('breads')) : [];
+                const selectedCheese = sessionStorage.getItem('cheese');
+                console.log("Loaded breads on vege page:", selectedBreads); // 로그 출력
+                if (selectedBreads.length > 0) {
+                    document.getElementById('selected-breads-display').textContent = selectedBreads.join(", ")+ (selectedCheese ? ", " + selectedCheese : "");
+                }
+            });
     </script>
 
     <script>
