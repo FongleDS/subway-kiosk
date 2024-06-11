@@ -38,14 +38,14 @@
                 document.getElementById('selected-sandwiches-display').textContent = selectedSandwiches.join(", ");
             }
         });
-    </script>
-    
+    </script> 
     <script>
             document.addEventListener("DOMContentLoaded", function() {
                 const selectedBreads = sessionStorage.getItem('breads') ? JSON.parse(sessionStorage.getItem('breads')) : [];
+                const selectedCheese = sessionStorage.getItem('cheese');
                 console.log("Loaded breads on vege page:", selectedBreads); // 로그 출력
                 if (selectedBreads.length > 0) {
-                    document.getElementById('selected-breads-display').textContent = selectedBreads.join(", ");
+                    document.getElementById('selected-breads-display').textContent = selectedBreads.join(", ")+ (selectedCheese ? ", " + selectedCheese : "");
                 }
             });
     </script>
@@ -164,7 +164,7 @@
                 <div class="selected-name" id="selected-sauce"></div>
             </div>
             <div id="order3" class="cart">
-                <div class="footer-square">빵</div> 
+                <div class="footer-square">빵/치즈</div> 
                 <div class="selected-name" id="selected-breads-display"></div>
             </div>
             <div id="order4" class="cart">

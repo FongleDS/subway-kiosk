@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/check.css?after">
     <title>주문 확인 페이지</title>
-</head>
+</head>    
 <body>
     <div class="kiosk-simulation">
         <div class="kiosk-background">
@@ -59,7 +59,7 @@
             </div>
             <div class="payment-bar">
                 <div class="price-section">
-                    <span class="price-amount">6,800</span><span class="currency">원</span>
+                    <span class="price-amount">6,700</span><span class="currency">원</span>
                 </div>
                 <a class="order-section" href="payment.html">
                 <div class="order-section1">
@@ -70,35 +70,34 @@
             </div>
         </section>
     </main>
+ 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const orderKeys = ['sandwiches', 'breads', 'veges', 'sides', 'sauces','adds'];
+            const orderKeys = ['sandwiches', 'breads', 'veges', 'sides', 'sauces', 'adds'];
+            const orderdatas = {
+                '베지 샌드위치': "4,900",
+                '에그마요 샌드위치': "5,500",
+                '햄 샌드위치': "5,800",
+                '참치 샌드위치': "5,800",
+                '쉬림프 샌드위치': "7,600",
+                '이탈리안 비엠티': "6,700"
+            };
+        
             orderKeys.forEach((item, index) => {
                 const storedItems = sessionStorage.getItem(item) ? JSON.parse(sessionStorage.getItem(item)) : [];
                 const displayText = storedItems.length > 0 ? storedItems.join(", ") : "선택 안함";
                 document.getElementById('w_order_' + (index + 1)).textContent = displayText;
+        
+                if (item === 'sandwiches' && storedItems.length > 0) {
+                    const sandwichName = storedItems[0]; // 첫 번째 샌드위치 선택을 가정
+                    const price = orderdatas[sandwichName];
+                    if (price) {
+                        document.querySelector('.price-amount').textContent = price;
+                        sessionStorage.setItem('totalPrice', price); // 저장
+                    }
+                }
             });
         });
-    </script>   
-    </div>
-    <div id="screen_bottom">
-        <div id="barcode">
-            <div id="barcode_img"></div>
-            <div>바코드를 대주세요</div>
-            <div id="barcode_png"></div>
-        </div>
-        <div id="insert_card">
-            <div>카드를 넣어주세요</div>
-            <div id="insert_card_block"></div>
-            <div id="use_card_block">____________________</div>
-            <div>카드를 긁어주세요</div>
-            <div id="receipt">
-                <div id="receipt_exit"></div>
-                <div id="receipt_img"></div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>     
+    </script>
 </body>
 </html>

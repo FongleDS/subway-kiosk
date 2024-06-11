@@ -28,6 +28,18 @@
                 document.getElementById('selected-bread').textContent = selectedBreads.join(", ");
             });
         });
+      
+
+        // 치즈 선택 로직 추가
+        const cheeseContainers = document.querySelectorAll('.contain');
+        cheeseContainers.forEach(container => {
+            container.addEventListener('click', function() {
+                selectedCheese = this.querySelector('p').textContent;  // 치즈 선택
+                sessionStorage.setItem('cheese', selectedCheese);
+                updateDisplay();
+                modal.style.display = 'none';  // 모달 닫기
+            });
+        });
 
         const modal = document.querySelector('.modal');
         const modalOpen = document.querySelector('.modal_btn');
@@ -43,19 +55,26 @@
         //display 속성을 none으로 변경
             modal.style.display = 'none';
         });
+
+        function updateDisplay() {
+            document.getElementById('selected-bread').textContent = selectedBreads.join(", ") + (selectedCheese ? ", " + selectedCheese : "");
+        }
+    
+        // 페이지 로드 시 현재 선택을 표시
+        updateDisplay();
     });
     </script>
     
     
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const selectedSandwiches = sessionStorage.getItem('sandwiches') ? JSON.parse(sessionStorage.getItem('sandwiches')) : [];
-            console.log("Loaded sandwiches on bread page:", selectedSandwiches); // 로그 출력
-            if (selectedSandwiches.length > 0) {
-                document.getElementById('selected-sandwiches-display').textContent = selectedSandwiches.join(", ");
+            const selectedBreads = sessionStorage.getItem('sandwiches') ? JSON.parse(sessionStorage.getItem('sandwiches')) : [];
+            console.log("Loaded sandwiches on bread page:", selectedBreads); // 로그 출력
+            if (selectedBreads.length > 0) {
+                document.getElementById('selected-sandwiches-display').textContent = selectedBreads.join(", ");
             }
         });
-        </script>
+    </script>
     
 <body>
     <div class="kiosk-simulation">
@@ -173,7 +192,7 @@
             <div class="selected-name" id="selected-sauce"></div>
         </div>
         <div id="order3" class="cart">
-            <div class="footer-square">빵</div> 
+            <div class="footer-square">빵/치즈</div> 
             <div class="selected-name" id="selected-bread"></div>
         </div>
         <div id="order4" class="cart">
