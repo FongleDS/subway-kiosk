@@ -215,14 +215,14 @@ a {
     width: 120px;
     height: 48px;
     margin-bottom: 10px;
-    background: url(../img/barcode_img.png) no-repeat center / cover;
+    background: url(../static/barcode_img.png) no-repeat center / cover;
   
   }
   #barcode_png {
     margin-top: 4%;
     width: 195px;
     height: 118px;
-    background: url(../img/barcode.png) no-repeat center / cover;
+    background: url(../static/barcode.png) no-repeat center / cover;
   }
   #insert_card {
     display: flex;
@@ -272,6 +272,6 @@ a {
   #receipt_img {
     width: 50px;
     height: 50px;
-    background: url(../img/receipt.png)no-repeat center / cover;
+    background: url(../static/receipt.png)no-repeat center / cover;
     margin-left: 10px;
   }
