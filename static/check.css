@@ -1,0 +1,279 @@
+body {
+  width: 100%; /* 전체 브라우저 너비 사용 */
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center; /* body 내에서 중앙 정렬 */
+  margin: 0; /* 바깥쪽 여백 제거 */
+  background-color: #f4f4f4;
+}
+
+
+header {
+    background-color: #009223; /* Dark green background */
+    padding: 20px 0;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.sb-logo {
+    width: 170px; /* Adjust based on actual logo size */
+}
+
+.status-bar-section {
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.status-bar {
+    width: 80%;
+    height: auto;
+    padding: 20px 0;
+}
+
+.order-details {
+    font-size: 47px;
+    color: #3d3d3d;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.order-title {
+    align-items: center;
+    width: 90%;
+    text-align: left;
+}
+
+.menu-line {
+    height: 4px;
+    width: 100%;
+    background-color: #009223;
+    margin-bottom: 20px;
+    margin-top: 150px;
+}
+
+.window {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.sandwich-details {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.menu-name {
+    font-weight: bold;
+    color: #333;
+    line-height: 2;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.window_order_list {
+    color: #666;
+    text-align: left;
+    line-height: 2.1;
+    margin-left: 50px;
+}
+
+
+.w_name {
+    font-size: 26px;
+    font-weight: bolder;
+    color: #00771c;
+}
+
+.w_order {
+    font-size: 25px;
+    font-weight: bolder;
+    margin-left: 15px;
+}
+
+.menu-line-bottom {
+    height: 5px;
+    width: 100%;
+    background-color: #009223;
+    margin-bottom: 20px;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 20px 10%;
+}
+
+.navigation-buttons button {
+    background-color: #009223;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top:150px;
+}
+
+
+.payment-bar {
+    display: flex;
+    width: 100%;
+    height: 150px;
+    margin-top: 370px;
+}
+
+.price-section {
+    flex: 2;
+    background-color: #666;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+
+.price-amount {
+    font-size: 50px; /* 크기를 더 크게 */
+    font-weight: bold; /* 글씨를 더 굵게 */
+}
+
+.currency {
+    font-size: 30px; /* 작은 글씨 크기 */
+    padding-left: 5px; /* 숫자와 '원' 사이의 간격 */
+    font-weight: normal;
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.order-section {
+    flex: 1;
+    background-color: #FBC313;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 33px;
+    cursor: pointer;
+}
+
+
+.cart-icon {
+    width: 30px; /* 아이콘 크기 조정 */
+    height: auto;
+    margin-right: 10px; /* 아이콘과 텍스트 사이 간격 */
+}
+
+/*kiosk*/
+.kiosk-simulation {
+    display:flex;
+    justify-content: center;
+    margin: 0;
+  }
+  
+  .kiosk-background { /*검정 기계 배경*/
+    width: 1000px;
+    background-color: black;
+    border-radius: 15px;
+    margin-top: 1vh;
+  }
+  
+  .mainpage {
+    background-color: #ffffff;
+    margin: 40px;
+    height: 1716px;
+  }
+  
+  #screen_bottom {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 150px;
+  }
+  
+  #barcode {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    width: 50%;
+    height: 100%;
+    color: white;
+    font-size: 25px;
+    margin-right: 20px;
+  }
+  #barcode_img{
+    width: 120px;
+    height: 48px;
+    margin-bottom: 10px;
+    background: url(../static/barcode_img.png) no-repeat center / cover;
+  
+  }
+  #barcode_png {
+    margin-top: 4%;
+    width: 195px;
+    height: 118px;
+    background: url(../static/barcode.png) no-repeat center / cover;
+  }
+  #insert_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3%;
+    width: 50%;
+    height: 25%;
+    color: #f5f5f5;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+  }
+  #insert_card_block {
+    margin-top: 5%;
+    width: 40%;
+    height: 8%;
+    border: solid #f5f5f5;
+    border-radius: 35%;
+    border-width: 3px;
+  }
+  #use_card_block {
+    display: flex;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+    height: 10%;
+    background: #424242;
+  }
+  #receipt {
+    margin-top: 5%;
+    display: flex;
+    width: 100%;
+    height: 20%;
+    align-items: center;
+    margin-left: 180px;
+  }
+  #receipt_exit{
+    width: 50%;
+    height: 20%;
+    border: solid #f5f5f5;
+    border-radius: 35%;
+    border-width: 3px;
+  }
+  #receipt_img {
+    width: 50px;
+    height: 50px;
+    background: url(../static/receipt.png)no-repeat center / cover;
+    margin-left: 10px;
+  }

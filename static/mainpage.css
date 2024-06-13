@@ -1,0 +1,154 @@
+body {
+    width: 100%; /* 전체 브라우저 너비 사용 */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center; /* body 내에서 중앙 정렬 */
+    margin: 0; /* 바깥쪽 여백 제거 */
+    background-color: #f4f4f4;
+}
+
+
+.kiosk-simulation {
+    display:flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.kiosk-background { /*검정 기계 배경*/
+    width: 1000px;
+    background-color: black;
+    border-radius: 15px;
+    margin-top: 1vh;
+}
+
+.mainpage {
+    background-color: #62CE08;
+    margin: 40px;
+}
+
+header {
+    background-color: #62CE08;
+}
+
+.sb-logo {
+    float: left;
+    background-color: #62CE08;
+    margin: 30px;
+}
+
+.banner {
+    height: 1300px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner img {
+    height: 1300px;
+    width: 100%;
+}
+
+#btn {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    background-color: #009223;
+    margin-top: 50px;
+    overflow: hidden;
+    text-align: center;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.eat > a {
+    font-size: 70px;
+    text-decoration: none;
+    font-weight: bolder;
+    background-color: #009223;
+    color: white;
+    display: block; 
+    width: 100%; 
+}
+
+/*kiosk*/
+#screen_bottom {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 150px;
+}
+
+#barcode {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    width: 50%;
+    height: 100%;
+    color: white;
+    font-size: 25px;
+    margin-right: 20px;
+}
+#barcode_img{
+    width: 120px;
+    height: 48px;
+    margin-bottom: 10px;
+    background: url(../static/barcode_img.png) no-repeat center / cover;
+
+}
+#barcode_png {
+    margin-top: 4%;
+    width: 195px;
+    height: 118px;
+    background: url(../static/barcode.png) no-repeat center / cover;
+}
+#insert_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3%;
+    width: 50%;
+    height: 25%;
+    color: #f5f5f5;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+}
+#insert_card_block {
+    margin-top: 5%;
+    width: 40%;
+    height: 8%;
+    border: solid #f5f5f5;
+    border-radius: 35%;
+    border-width: 3px;
+}
+#use_card_block {
+    display: flex;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+    height: 10%;
+    background: #424242;
+}
+#receipt {
+    margin-top: 5%;
+    display: flex;
+    width: 100%;
+    height: 20%;
+    align-items: center;
+    margin-left: 180px;
+}
+#receipt_exit{
+    width: 50%;
+    height: 20%;
+    border: solid #f5f5f5;
+    border-radius: 35%;
+    border-width: 3px;
+}
+#receipt_img {
+    width: 50px;
+    height: 50px;
+    background: url(../static/receipt.png)no-repeat center / cover;
+    margin-left: 10px;
+}
