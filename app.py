@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, jsonify, render_template, url_for
+from flask import Flask, request, jsonify, render_template, url_for, session, redirect
 import speech_recognition as sr
 import logging
 import io
@@ -99,36 +99,10 @@ def send_message():
         else:
             response_text = "Dialogflow did not return a response."
 
-        # 현재 단계 확인 및 업데이트
-        if 'step' not in session:
-            session['step'] = 1
-        else:
-            session['step'] += 1
+        session['response_text'] = response_text
+        print(response_text)
 
-        redirect_url = None
-        if response_text != "이해하지 못했어요. 다시 한 번 말씀해주시겠어요?":
-            session['step'] += 1
-
-        if session['step'] == 1:
-            redirect_url = url_for('sandwich')
-        elif session['step'] == 2:
-            redirect_url = url_for('bread')
-        elif session['step'] == 3:
-            redirect_url = url_for('vege')
-        elif session['step'] == 4:
-            redirect_url = url_for('side')
-        elif session['step'] == 5:
-            redirect_url = url_for('sc')
-        elif session['step'] == 6:
-            redirect_url = url_for('add')
-        elif session['step'] == 7:
-            redirect_url = url_for('check')
-        elif session['step'] == 8:
-            redirect_url = url_for('payment')
-        else:
-            session['step'] = 1  # 다시 처음으로
-
-        return jsonify({'reply': response_text, 'session_id': session_id, 'redirect': redirect_url})
+        return jsonify({'reply': response_text, 'session_id': session_id, 'text': session['response_text']})
 
     except KeyError:
         app.logger.error("Invalid request: 'message' or 'session_id' field is missing")
@@ -137,12 +111,26 @@ def send_message():
         app.logger.error("Failed to communicate with Dialogflow: %s", e)
         return jsonify({"error": f"Failed to communicate with Dialogflow: {e}"}), 500
 
+
+@app.route('/check-response')
+def check_response():
+    response_text = session.get('response_text', '')
+    print(response_text)
+    return jsonify({'response_text': response_text})
+
+
 @app.route("/add")
 def add():
+    response_text = session.get('response_text', '')
+    if response_text != '이해하지 못했어요. 다시 한 번 말씀해주시겠어요?':
+        return redirect(url_for('check'))
     return render_template('add.html')
 
 @app.route("/bread")
 def bread():
+    response_text = session.get('response_text', '')
+    if response_text != '이해하지 못했어요. 다시 한 번 말씀해주시겠어요?':
+        return redirect(url_for('vege'))
     return render_template('bread.html')
 
 @app.route("/check")
@@ -161,32 +149,44 @@ def dialog():
 def lastpage():
     return render_template('lastpage.html')
 
-@app.route("/mainpage")
-def mainpage():
-    return render_template('mainpage.html')
-
 @app.route("/payment")
 def payment():
     return render_template('payment.html')
 
 @app.route("/sandwich")
 def sandwich():
+    response_text = session.get('response_text', '')
+    if response_text != '이해하지 못했어요. 다시 한 번 말씀해주시겠어요?':
+        return redirect(url_for('bread'))
     return render_template('sandwich.html')
 
 @app.route("/sc")
 def sc():
+    response_text = session.get('response_text', '')
+    if response_text != '이해하지 못했어요. 다시 한 번 말씀해주시겠어요?':
+        return redirect(url_for('add'))
     return render_template('sc.html')
 
 @app.route("/side")
 def side():
+    response_text = session.get('response_text', '')
+    if response_text != '이해하지 못했어요. 다시 한 번 말씀해주시겠어요?':
+        return redirect(url_for('sc'))
     return render_template('side.html')
 
 @app.route("/vege")
 def vege():
+    response_text = session.get('response_text', '')
+    if response_text != '이해하지 못했어요. 다시 한 번 말씀해주시겠어요?':
+        return redirect(url_for('side'))
     return render_template('vege.html')
 
 @app.route("/")
 def home():
+    response_text = session.get('response_text', '')
+    print(response_text)
+    if response_text != '이해하지 못했어요. 다시 한 번 말씀해주시겠어요?':
+        return redirect(url_for('sandwich'))
     return render_template('mainpage.html')
 
 if __name__ == '__main__':
