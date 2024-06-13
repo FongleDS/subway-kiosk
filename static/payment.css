@@ -1,0 +1,221 @@
+body {
+  width: 100%; /* 전체 브라우저 너비 사용 */
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center; /* body 내에서 중앙 정렬 */
+  margin: 0; /* 바깥쪽 여백 제거 */
+  background-color: #f4f4f4;
+}
+
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+header {
+    background-color: #009223; /* Dark green background */
+    padding: 20px 0;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.sb-logo {
+    width: 170px; /* Adjust based on actual logo size */
+}
+
+.status-bar-section {
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.status-bar {
+    width: 80%;
+    height: auto;
+    padding: 20px 0;
+}
+
+
+.progress {
+    width: 100%;
+    text-align: center;
+    color: #434343;
+    font-size: 40px;
+    margin-top: 100px;
+}
+
+
+.popup {
+    background-color: #ffffff;
+    width: 88%;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(63, 63, 63, 0.3);
+    margin: 40px auto;
+}
+
+.popup-head {
+    display: flex;
+    flex-direction: row;
+    background-color: #009223;
+    margin-bottom: 80px;
+    padding: 10px;
+    align-items: center;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 5px 0 5px -5px rgba(63, 63, 63, 0.3), -5px 0 5px -5px rgba(63, 63, 63, 0.3);
+}
+
+.popup-head > img {
+    width: 45px;
+    height: 55px;
+    margin-left: 10px;
+}
+
+.popup-head > p {
+    font-size: 35px;
+    color: white;
+    margin: 8px 0 5px 8px;
+    font-weight: bolder;
+}
+
+section {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.amount-display {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.choice {
+    margin: 30px;
+    text-align: center;
+    font-size: 30px;
+}
+
+
+.key1{
+    background-color: #f5f5f5;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    border: 0px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.choice img {
+    width: 200px;
+}
+
+/*kiosk*/
+.kiosk-simulation {
+    display:flex;
+    justify-content: center;
+    margin: 0;
+  }
+  
+  .kiosk-background { /*검정 기계 배경*/
+    width: 1000px;
+    background-color: black;
+    border-radius: 15px;
+    margin-top: 1vh;
+  }
+  
+  .mainpage {
+    background-color: #ffffff;
+    margin: 40px;
+    height: 1716px;
+  }
+  
+  #screen_bottom {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 150px;
+  }
+  
+  #barcode {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    width: 50%;
+    height: 100%;
+    color: white;
+    font-size: 25px;
+    margin-right: 20px;
+  }
+  #barcode_img{
+    width: 120px;
+    height: 48px;
+    margin-bottom: 10px;
+    background: url(../static/barcode_img.png) no-repeat center / cover;
+  
+  }
+  #barcode_png {
+    margin-top: 4%;
+    width: 195px;
+    height: 118px;
+    background: url(../static/barcode.png) no-repeat center / cover;
+  }
+  #insert_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3%;
+    width: 50%;
+    height: 25%;
+    color: #f5f5f5;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+  }
+  #insert_card_block {
+    margin-top: 5%;
+    width: 40%;
+    height: 8%;
+    border: solid #f5f5f5;
+    border-radius: 35%;
+    border-width: 3px;
+  }
+  #use_card_block {
+    display: flex;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+    height: 10%;
+    background: #424242;
+  }
+  #receipt {
+    margin-top: 5%;
+    display: flex;
+    width: 100%;
+    height: 20%;
+    align-items: center;
+    margin-left: 180px;
+  }
+  #receipt_exit{
+    width: 50%;
+    height: 20%;
+    border: solid #f5f5f5;
+    border-radius: 35%;
+    border-width: 3px;
+  }
+  #receipt_img {
+    width: 50px;
+    height: 50px;
+    background: url(../static/receipt.png)no-repeat center / cover;
+    margin-left: 10px;
+  }
