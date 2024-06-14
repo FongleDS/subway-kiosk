@@ -5,7 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/sandwich.css">
     <title>sandwich page</title>
-</head>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        function checkResponse() {
+            $.ajax({
+                url: '/check-response',
+                type: 'GET',
+                success: function(data) {
+                    if (data.response_text != '이해하지 못했어요. 다시 한 번 말씀해주시겠어요?') {
+                        window.location.href = '/bread'; // 조건이 충족되면 page2로 리다이렉트
+                    }
+                }
+            });
+        }
+        setInterval(checkResponse, 3000); // 5초마다 서버 응답 확인
+    });
+    </script>
+</head>
+
+
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const sandwichContainers = document.querySelectorAll('.container');
