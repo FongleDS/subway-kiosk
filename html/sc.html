@@ -44,6 +44,15 @@
                 document.getElementById('selected-sauce').textContent = selectedSauces.join(", ");
             });
         });
+        // 자동으로 에그마요 샌드위치를 선택
+        setTimeout(() => {
+            const sauce = "랜치, 스위트 칠리";
+            if (!selectedSauces.includes(sauce)) {
+                selectedSauces.push(sauce);
+                sessionStorage.setItem('sauces', JSON.stringify(selectedSauces));
+                document.getElementById('selected-sauce').textContent = selectedSauces.join(", ");
+            }
+        }, 27000); // 10초 후 실행
     });
     </script>
     <script>

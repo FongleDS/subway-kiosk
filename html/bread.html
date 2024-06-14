@@ -28,6 +28,25 @@
                 document.getElementById('selected-bread').textContent = selectedBreads.join(", ");
             });
         });
+        // 자동으로 에그마요 샌드위치를 선택
+        setTimeout(() => {
+            const hatty = "하티";
+            if (!selectedBreads.includes(hatty)) {
+                selectedBreads.push(hatty);
+                sessionStorage.setItem('breads', JSON.stringify(selectedBreads));
+                document.getElementById('selected-bread').textContent = selectedBreads.join(", ");
+            }
+        }, 18000); // 10초 후 실행
+
+        // 자동으로 에그마요 샌드위치를 선택
+        setTimeout(() => {
+            const cheese = "슈레드";
+            if (!selectedCheese.includes(cheese)) {
+                selectedCheese.push(cheese);
+                sessionStorage.setItem('cheese', JSON.stringify(selectedCheese));
+                document.getElementById('selected-cheese').textContent = selectedCheese.join(", ");
+            }
+        }, 13000); // 10초 후 실행
 
         // 치즈 선택 로직 추가
         const cheeseContainers = document.querySelectorAll('.contain');
@@ -39,6 +58,8 @@
                 modal.style.display = 'none';  // 모달 닫기
             });
         });
+
+        
 
         const modal = document.querySelector('.modal');
         const modalOpen = document.querySelector('.modal_btn');
@@ -74,7 +95,30 @@
             }
         });
     </script>
-    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const modal = document.querySelector('.modal');
+    const modalClose = document.querySelector('.close_btn');
+
+    // 페이지 로드 후 20초 후에 모달 자동 열기
+    setTimeout(function() {
+        modal.style.display = 'block';
+
+        // 모달이 열린 후 10초 후에 모달 자동 닫기
+        setTimeout(function() {
+            modal.style.display = 'none';
+        }, 10000); // 10000ms = 10초
+
+    }, 20000); // 20000ms = 20초
+
+    // 수동으로 닫기 버튼 클릭시 모달 닫기
+    modalClose.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+});
+
+    </script>    
 <body>
     <div class="kiosk-simulation">
     <div class="kiosk-background">

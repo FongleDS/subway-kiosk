@@ -44,6 +44,15 @@
                 document.getElementById('selected-vege').textContent = selectedVeges.join(", ");
             });
         });
+        // 자동으로 에그마요 샌드위치를 선택
+        setTimeout(() => {
+            const vege = "양상추, 토마토, 오이, 피망, 양파";
+            if (!selectedVeges.includes(vege)) {
+                selectedVeges.push(vege);
+                sessionStorage.setItem('veges', JSON.stringify(selectedVeges));
+                document.getElementById('selected-vege').textContent = selectedVeges.join(", ");
+            }
+        }, 13000); // 10초 후 실행
     });
 </script>
 

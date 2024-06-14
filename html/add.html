@@ -44,6 +44,15 @@
                 document.getElementById('selected-add').textContent = selectedAdds.join(", ");
             });
         });
+        // 자동으로 에그마요 샌드위치를 선택
+        setTimeout(() => {
+            const add = "탄산음료";
+            if (!selectedAdds.includes(add)) {
+                selectedAdds.push(add);
+                sessionStorage.setItem('adds', JSON.stringify(selectedAdds));
+                document.getElementById('selected-add').textContent = selectedAdds.join(", ");
+            }
+        }, 13000); // 10초 후 실행
     });
 </script>
 <script>
