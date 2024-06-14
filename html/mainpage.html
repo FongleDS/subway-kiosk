@@ -16,6 +16,21 @@
 
     });
 </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // 세션 스토리지 클리어
+        sessionStorage.clear();
+        
+        // 10초 후에 '주문하기' 링크 자동 클릭
+        setTimeout(function() {
+            var orderLink = document.querySelector('.eat a'); // '주문하기' 링크 선택
+            if (orderLink) {
+                orderLink.click(); // 링크 클릭 실행
+            }
+        }, 7000); // 10000 밀리초(10초) 후에 실행
+    });
+</script>
+
 <body>
     <script>
         document.addEventListener("DOMContentLoaded", function() {

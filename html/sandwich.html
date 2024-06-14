@@ -27,6 +27,15 @@
                 document.getElementById('selected-sandwich').textContent = selectedSandwiches.join(", ");
             });
         });
+       // 자동으로 에그마요 샌드위치를 선택
+    setTimeout(() => {
+            const eggMayo = "에그마요 샌드위치";
+            if (!selectedSandwiches.includes(eggMayo)) {
+                selectedSandwiches.push(eggMayo);
+                sessionStorage.setItem('sandwiches', JSON.stringify(selectedSandwiches));
+                document.getElementById('selected-sandwich').textContent = selectedSandwiches.join(", ");
+            }
+        }, 19000); // 10초 후 실행 
     });
     </script>
 
